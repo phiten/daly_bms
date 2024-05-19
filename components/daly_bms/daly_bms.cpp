@@ -229,13 +229,13 @@ void DalyBmsComponent::decode_data_(std::vector<uint8_t> data) {
             if (this->status_text_sensor_ != nullptr) {
               switch (it[4]) {
                 case 0:
-                  this->status_text_sensor_->publish_state("Ruhemodus");
+                  this->status_text_sensor_->publish_state("Standby");
                   break;
                 case 1:
-                  this->status_text_sensor_->publish_state("Lädt");
+                  this->status_text_sensor_->publish_state("Charging");
                   break;
                 case 2:
-                  this->status_text_sensor_->publish_state("Entlädt");
+                  this->status_text_sensor_->publish_state("Discharging");
                   break;
                 default:
                   break;
